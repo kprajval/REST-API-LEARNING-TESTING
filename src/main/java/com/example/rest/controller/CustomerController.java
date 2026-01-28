@@ -2,6 +2,7 @@ package com.example.rest.controller;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -46,7 +47,12 @@ public class CustomerController {
     }
 
     @PutMapping("/id")
-    public void putById(@RequestParam int id, @RequestParam String name){
-        service.putById(id, name);
+    public void putById(@RequestParam int id, @RequestParam String name, @RequestParam String email){
+        service.putById(id, name, email);
+    }
+
+    @PatchMapping("/id")
+    public void patchById(@RequestParam int id, @RequestParam String name){
+        service.patchById(id, name);
     }
 }

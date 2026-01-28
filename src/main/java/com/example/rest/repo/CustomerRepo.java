@@ -36,7 +36,16 @@ public class CustomerRepo {
         }
     }
 
-    public void putById(int id, String name){
+    public void putById(int id, String name, String email){
+        for(Customer c: customers){
+            if(c.getId() == id){
+                c.setName(name);
+                c.setEmail(email);
+            }
+        }
+    }
+
+    public void patchById(int id, String name){
         for(Customer c: customers){
             if(c.getId() == id){
                 c.setName(name);

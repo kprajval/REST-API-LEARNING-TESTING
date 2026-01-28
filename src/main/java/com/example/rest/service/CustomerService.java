@@ -31,7 +31,11 @@ public class CustomerService {
         repo.delById(id);
     }
 
-    public void putById(int id, String name){
-        repo.putById(id, name);
+    public void putById(int id, String name, String email){
+        repo.putById(id, name, email);
+    }
+
+    public void patchById(int id, String name){
+        repo.patchById(id, name);
     }
 }
