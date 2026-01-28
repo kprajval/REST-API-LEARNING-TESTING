@@ -35,7 +35,7 @@ public class CustomerService {
         repo.putById(c);
     }
 
-    public void patchById(int id, String name){
-        repo.patchById(id, name);
+    public void patchById(Customer cust){
+        repo.patchById(cust);
     }
 }

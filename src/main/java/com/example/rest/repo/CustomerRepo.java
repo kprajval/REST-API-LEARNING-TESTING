@@ -45,10 +45,16 @@ public class CustomerRepo {
         }
     }
 
-    public void patchById(int id, String name){
+    public void patchById(Customer cust){
         for(Customer c: customers){
-            if(c.getId() == id){
-                c.setName(name);
+            if(c.getId() == cust.getId()){
+                if(cust.getName() != null){
+                    c.setName(cust.getName());
+                }
+
+                if(cust.getEmail() != null){
+                    c.setEmail(cust.getEmail());
+                }
             }
         }
     }

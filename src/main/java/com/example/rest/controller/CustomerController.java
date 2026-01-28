@@ -53,7 +53,8 @@ public class CustomerController {
     }
 
     @PatchMapping("/id")
-    public void patchById(@RequestParam int id, @RequestParam String name){
-        service.patchById(id, name);
+    public void patchById(@RequestParam int id, @RequestBody Customer cust){
+        cust.setId(id);
+        service.patchById(cust);
     }
 }
