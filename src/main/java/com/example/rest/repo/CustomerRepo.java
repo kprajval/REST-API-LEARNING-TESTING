@@ -36,11 +36,11 @@ public class CustomerRepo {
         }
     }
 
-    public void putById(int id, String name, String email){
-        for(Customer c: customers){
-            if(c.getId() == id){
-                c.setName(name);
-                c.setEmail(email);
+    public void putById(Customer cust){
+        for(int i = 0; i < customers.size(); i++){
+            Customer c = customers.get(i);
+            if(c.getId() == cust.getId()){
+                customers.set(i, cust);
             }
         }
     }

@@ -47,8 +47,9 @@ public class CustomerController {
     }
 
     @PutMapping("/id")
-    public void putById(@RequestParam int id, @RequestParam String name, @RequestParam String email){
-        service.putById(id, name, email);
+    public void putById(@RequestParam int id, @RequestBody Customer c){
+        c.setId(id);
+        service.putById(c);
     }
 
     @PatchMapping("/id")
